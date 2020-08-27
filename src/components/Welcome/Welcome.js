@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ToolbarAndroid } from 'react-native';
+
 export class Welcome extends Component {
     render() {
         return (
