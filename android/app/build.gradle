@@ -1,5 +1,5 @@
 apply plugin: "com.android.application"
-
+apply plugin: 'com.google.gms.google-services'
 import com.android.build.OutputFile
 
 /**
@@ -130,7 +130,8 @@ android {
 
     defaultConfig {
         applicationId "com.twilio_react_native"
-        minSdkVersion rootProject.ext.minSdkVersion
+        // minSdkVersion rootProject.ext.minSdkVersion
+        minSdkVersion 21
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
@@ -189,6 +190,9 @@ dependencies {
 
     implementation project(':react-native-twilio-video-webrtc')
     implementation 'com.android.support:support-annotations:+'
+    // No need to use
+    // implementation 'com.google.firebase:firebase-analytics:17.3.0'
+    implementation project(':react-native-push-notification')
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'

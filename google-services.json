@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "461669841301",
+    "firebase_url": "https://seetok-c38df.firebaseio.com",
+    "project_id": "seetok-c38df",
+    "storage_bucket": "seetok-c38df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461669841301:android:f866b4135c7a59abc11e9c",
+        "android_client_info": {
+          "package_name": "com.twilio_react_native"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461669841301-6g890816906ble373ikpegtqq6tuqlol.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZLBg6UTGDtyHUFgZwZgPPlaEc5-_jlvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "461669841301-6g890816906ble373ikpegtqq6tuqlol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
