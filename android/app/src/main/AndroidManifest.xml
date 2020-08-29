@@ -11,7 +11,6 @@
     <!-- Begin for react native push notifications -->
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-
     <!-- End for react native push notifications  -->
     <application
       android:name=".MainApplication"
