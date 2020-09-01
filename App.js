@@ -1,65 +1,31 @@
-import React, { useEffect, useCallback } from 'react';
-import { Text, View, Button, StyleSheet } from 'react-native';
+import 'react-native-gesture-handler';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import { LocalNotification } from './src/components/LocalPushController';
+import VideoCall from './src/components/VideoCall';
+import LoginScreen from './src/components/LoginScreen';
 
-var PushNotification = require('react-native-push-notification');
-
-PushNotification.configure({
-    // (optional) Called when Token is generated (iOS and Android)
-    onRegister: function (token) {
-        console.log('FCM TOKEN:', token);
-    },
-
-    // (required) Called when a remote is received or opened, or local notification is opened
-    onNotification: function (notification) {
-        console.log('Remote NOTIFICATION:', notification);
-    },
-
-    // (optional) Called when Registered Action is pressed and invokeApp is false, if true onNotification will be called (Android)
-    onAction: function (notification) {
-        console.log('ACTION:', notification.action);
-        console.log('NOTIFICATION:', notification);
-    },
-
-    // (optional) Called when the user fails to register for remote notifications. Typically occurs when APNS is having issues, or the device is a simulator. (iOS)
-    onRegistrationError: function (err) {
-        console.error(err.message, err);
-    },
-
-    popInitialNotification: true,
-    requestPermissions: true,
-});
+const Stack = createStackNavigator();
 
 const App = () => {
-    useEffect(() => {
-        console.log('********HEllo*************');
-    });
-
-    const handleButtonPress = useCallback(() => {
-        LocalNotification();
-    });
-
     return (
-        <View style={styles.container}>
-            <Text>Press a button to trigger the notification</Text>
-            <View style={{ marginTop: 20 }}>
-                <Button
-                    title={'Local Push Notification'}
-                    onPress={handleButtonPress}
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName='Login'>
+                <Stack.Screen
+                    name='Login'
+                    component={LoginScreen}
+                    options={{ title: 'Login' }}
                 />
-            </View>
-        </View>
+                <Stack.Screen
+                    name='Video'
+                    component={VideoCall}
+                    options={{ title: 'Video Call' }}
+                    initialParams={{ itemId: 42 }}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 };
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    buttonContainer: {
-        marginTop: 20,
-    },
-});
+
 export default App;
